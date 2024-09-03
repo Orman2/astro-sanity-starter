@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9r1fc.pages.dev.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 700;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        nav a.active {
+            color: #007BFF;
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero {
+            background-color: #007BFF;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .hero h2 {
+            font-size: 2em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0 0;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .section img {
+            width: 480px;
+            height: 800px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .section-text {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 480px;
+            box-sizing: border-box;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>9r1.fc.com</h1>
+    </header>
+
+    <nav>
+        <a id="nav-home" onclick="showSection('home')">Главная</a>
+        <a id="nav-about" onclick="showSection('about')">О нас</a>
+        <a id="nav-services" onclick="showSection('services')">Услуги</a>
+        <a id="nav-contact" onclick="showSection('contact')">Контакты</a>
+    </nav>
+
+    <main>
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Добро пожаловать на 9r1.fc.pages.dev.</h2>
+                <p>Ваш надежный источник информации и услуг.</p>
+            </div>
+            <section class="content">
+                <div class="card">
+                    <h3>Создатель Сайта</h3>
+                    <p>Али Гаджизаде родился 2009 года 1 декабря в Баку.</p>
+                </div>
+                <div class="card">
+                    <h3>Почему он хочет опозорить класс 9r1</h3>
+                    <p>По сегодняшний день неизвестно.</p>
+                </div>
+                <div class="card">
+                    <h3>Почему 9r1 должен страдать из-за Али Гаджизаде</h3>
+                    <p>По сегодняшний день также неизвестно.</p>
+                </div>
+            </section>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-content">
+                <img src="your-photo.jpg" alt="Фото">
+                <div class="section-text">
+                    <p>Ученики 9r1 учимся в школе Akademik Zərifə Əliyeva adına lisey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="section-content">
+                <img src="your-photo.jpg" alt="Фото">
+                <div class="section-text">
+                    <p>Можем опозорить ваш класс за 1 час цена будет вашим однакалсником.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-content">
+                <img src="your-photo.jpg" alt="Фото">
+                <div class="section-text">
+                    <p>Вы можете связаться с нами</p>
+                    <p>+994 55 227 06 35</p>
+                    <p>+994 50 227 60 35</p>
+                    <p>+994 70 227 66 35</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2008 9r1.fc.pages.dev. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.getElementById('nav-' + sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
